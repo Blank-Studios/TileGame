@@ -11,11 +11,6 @@ public class GameTile
     private int x = 100;
     private int y = 100;
     private Unit unit = null;
-    private JButton move;
-    private JButton attack;
-    private JButton spells;
-    private JButton close;
-    private JButton info;
     
     /**
      * Default constructor. Empty 100x100 pixel tile with no bonus values. 
@@ -55,26 +50,7 @@ public class GameTile
      */
     public void getInfo()
     {
-        JFrame info = setUpFrame();
-        if (!isEmpty())
-        {
-            info.add(move);
-            info.add(attack);
-            if (unit instanceof MagicUnit)
-            {
-                info.add(spells);
-            }
-        }
-        info.add(close);
-        info.add(this.info);
-    }
-    
-    private JFrame setUpFrame()
-    {
-        JFrame infoFrame = new JFrame("Menu");
-        infoFrame.setResizable(false);
-        infoFrame.setUndecorated(true);
-        return infoFrame;
+       
     }
     
     /**
