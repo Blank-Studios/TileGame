@@ -20,6 +20,20 @@ public class TileGrid
         }
     }
     
+    public TileGrid(int x, int y)
+    {
+        x += 2;
+        y += 2;
+        map = new GameTile[x][y]
+        for (int r = 1; r < x)
+        {
+            for (int c = 1; c < y)
+            {
+                map[r][c] = new GameTile(0);
+            }
+        }
+    }
+    
     public int getRow()
     {
         return x;
