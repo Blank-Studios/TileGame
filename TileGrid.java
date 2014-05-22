@@ -4,15 +4,16 @@ public class TileGrid
 {
     private int x;
     private int y;
+    private GameTile;
     
     GameTile[][] map;
     
     public TileGrid()
     {
-        map = new GameTile[10][10];
-        for (int r = 0; r < 10; r++)
+        map = new GameTile[12][12];
+        for (int r = 1; r < 10; r++)
         {
-            for (int c = 0; c < 10; c++)
+            for (int c = 1; c < 10; c++)
             {
                 map[r][c] = new GameTile(0);
             }
