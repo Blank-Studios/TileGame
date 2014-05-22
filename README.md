@@ -20,8 +20,12 @@ To hit: Atk (of attacking Unit) > Def (of defending Unit).
 Damage: Weapon damage. x2 if "super effective" (i.e. Bow-class weapon vs flying unit). x2 if Speed (of attacker) > Def (of defender). x2 for critical (Crit stat > random number from 1 - 100). 
 
 Need to do:
-Opening and implemention when tile clicked.
-Unit development
-Weapon implementation
-Images/graphics
-Unit array for manager to cross-reference.
+-Opening and implemention when tile clicked.
+
+-Unit development
+
+-Weapon implementation
+
+-Images/graphics
+
+-Unit array for manager to cross-reference.
