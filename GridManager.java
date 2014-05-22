@@ -1,38 +1,67 @@
 package Core;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
 
-@SuppressWarnings("unused")
-public class GridManager implements ActionListener
+public class GridManager extends MouseAdapter implements Runnable
 {
+   
+    private JFrame gameFrame;
     
+    private GamePanel gamePanel;
     
-    private JButton move;
-    private JButton attack;
-    private JButton spells;
-    private JButton inventory;
-    private JButton close;
-    private JButton info;
+
     
-    private JFrame optionFrame;
+    private boolean running = false;
     
     public GridManager(){
-        move = new JButton("Move");
-        attack = new JButton("Attack");
-        spells = new JButton("Spells");
-        inventory = new JButton("Inventory");
-        info = new JButton("Info");
-        close = new JButton("Close");
+        
+        gamePanel = new GamePanel();
+        
+        gameFrame = new JFrame("Game");
+        System.out.println("Game Panel: " + gamePanel.getSize());
+        gameFrame.getContentPane().setPreferredSize(gamePanel.getSize());
+        gameFrame.pack();
+        gameFrame.setLocationRelativeTo(null);
+        gameFrame.add(gamePanel);
+        gameFrame.setVisible(true);
+        gameFrame.addMouseListener(this);
+        gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        gameFrame.setResizable(false);
+        
+        Thread t = new Thread(this);
+        t.start();
     }
 
-    @Override
-    public void actionPerformed(ActionEvent arg0)
-    {
-        // TODO Auto-generated method stub
-        
+	@Override
+	public void run() {
+		running = true;
+		
+		while(running){
+			render();
+			gameFrame.repaint();
+			
+			try {
+				Thread.sleep(1);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	
+	public static void main(String[] args){
+		GridManager m = new GridManager();
+	}
+	
+    public void render(){
+    	gamePanel.repaint();
     }
     
+    @Override
+	public void mouseReleased(MouseEvent e) {
+		gamePanel.sendMouseEvent(e);
+	}
 }
