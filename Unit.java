@@ -10,16 +10,9 @@ public abstract class Unit
     
     private boolean fly;
     
-    private Weapons[] inventory = new Weapons[5];
-    
     private Weapons equip;
     
     public int owner;
-    
-    public Weapons[] getInv()
-    {
-        return inventory;
-    }
     
     public int getLevel()
     {
