@@ -67,10 +67,12 @@ public class GridManager extends MouseAdapter implements Runnable
 		int frames = 0; //the variable tracking the number of frames in a second
 		while(running){
 				
-				if(System.currentTimeMillis() - beginTime >= 1000){
-					System.out.println("FPS: " + frames);
-					frames = 0;
-					beginTime = System.currentTimeMillis();
+				if(System.currentTimeMillis() - beginTime >= 1000){ //If time passed in milliseconds is greater than or more than a second
+																	//frames per SECOND
+					System.out.println("FPS: " + frames); //Out print the FPS to the console - This could be outprinted to the game screen
+															//if wanted
+					frames = 0; //reset frames back to 0 to check next FPS
+					beginTime = System.currentTimeMillis(); //The beginTime should be reset to now
 				}
 				
 				
