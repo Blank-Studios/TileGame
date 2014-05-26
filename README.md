@@ -22,6 +22,8 @@ To hit: Atk (of attacking Unit) > Def (of defending Unit).
 Damage: Weapon damage. x2 if "super effective" (i.e. Bow-class weapon vs flying unit). x2 if Speed (of attacker) > Def (of defender). x2 for critical (Crit stat > random number from 1 - 100). 
 
 --------------------------------------------------------------------
+Updates
+--------------------------------------------------------------------
 
 Update 1 - Matthew M
 
@@ -33,7 +35,7 @@ Update 2 - Matthew M
 
 Updates were broad and affected every class. Added a fixed update, and rearranged unit constructors for a more fine-tuned object creation. New classes were added that involve a dialogue box, a player class, and the option menu is in its own class. FPS is now displayed on the game's frame. Other major updates and details were applied to help increase effectiveness, and ease of readability and maintainability. Future updates that are needed will be committed soon.
 
----------------------------------------------------------------------
+--------------------------------------------------------------------
 
 Update 3 - Matthew M
 
