@@ -30,20 +30,28 @@ public class GamePanel extends JPanel{
 
 	private boolean showingGridLines = true;
 
+	private Dialogue dialogue;
+
 	public GamePanel(){
 		grid = new TileGrid(10, 10); //create grid of a certain size
 		setPreferredSize(new Dimension(grid.getGridWidth(), grid.getGridHeight())); //sets this panel's preferred size
+		dialogue = new Dialogue(this, "Be sure to understand this program. You are helping with this as well. Understanding how to "
+				+ " interact with this code will help you in programming along side of this code, or better yet, determining what is"
+				+ " not good and should be changed. Please take a look at the code, so we can discuss what is the good, the bad, and the ugly."
+				+ " Thank you, for your cooperation and help in making this a better experience. For the BOTH of us.", true);
+		dialogue.setDialoguePlacement(Dialogue.PLACEMENT_CENTER_OF_PARENT);
+		dialogue.typeText(true);
 	}
 
 	/**
 	 * All the drawing takes place here
 	 */
 	public void paintComponent(Graphics g){
-		
-		grid.draw(g); //draw the grid and its objects
 
+		grid.draw(g); //draw the grid and its objects
 		if(showingGridLines)
 			drawGridLines(g); //if should show gridlines, draw them
+		dialogue.draw(g);
 
 	}
 
@@ -64,14 +72,14 @@ public class GamePanel extends JPanel{
 		}
 		g.setColor(defaultColor); //set the color back to what it was before drawing the lines
 	}
-	
+
 	/**
 	 * get the dimension size of this panel
 	 */
 	public Dimension getSize(){
 		return new Dimension(grid.getGridWidth(), grid.getGridHeight()); //have the size of the panel be equal to the size of the grid
 	}
-	
+
 	/**
 	 * Sends the MouseEvent to be used by the grid
 	 * @param e The mouse event to use
@@ -79,9 +87,14 @@ public class GamePanel extends JPanel{
 	public void sendMouseEvent(MouseEvent e){
 		grid.takeMouseEvent(e); //send the mouse even to the grid
 	}
-	
+
 	public void update(){
 		grid.update();
+		dialogue.update();
+	}
+
+	public void fixedUpdate(){
+		grid.fixedUpdate();
 	}
 
 }
