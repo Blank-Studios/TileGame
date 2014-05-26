@@ -31,4 +31,4 @@ Updates were broad in scope and affected every class. FPS was added along with u
 
 Update 2 - Matthew M
 
-Updates were broad and affected every class. Added a fixed update, and rearranged unit constructors for a more fine-tuned object creation. New classes were added that involve a dialogue box, a player class, and the option menu is in its own class. FPS is now displayed on the game's frame. Other major updates and details were applied to help increase effectiveness, and ease of readability and maintainability. Future updates that are needed will committed soon.
+Updates were broad and affected every class. Added a fixed update, and rearranged unit constructors for a more fine-tuned object creation. New classes were added that involve a dialogue box, a player class, and the option menu is in its own class. FPS is now displayed on the game's frame. Other major updates and details were applied to help increase effectiveness, and ease of readability and maintainability. Future updates that are needed will be committed soon.
