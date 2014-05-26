@@ -2,12 +2,14 @@ package Units;
 
 import java.awt.Graphics;
 
+import Core.GameTile;
+
 
 public class Healer extends MagicUnit
 {
-    public Healer(int x, int y, String name, int level, int[] atts, boolean fly, String[] inventory)
+    public Healer(GameTile tile, int playerOwner, String name, int level, int[] atts, boolean fly, String[] inventory)
     {
-        super(x, y);
+        super(tile, playerOwner);
     }
 
 	@Override
