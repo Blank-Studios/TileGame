@@ -1,5 +1,5 @@
-Game Overview Idea - Will R
-
+Game Overview Ideas
+--------------------------------------------------------------------
 Idea to use arrows and enter key as a means of selecting tiles (using ActionListner):
 {
 if (*event variable* == *up arrow* && y - 1 > 0)
