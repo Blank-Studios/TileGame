@@ -1,17 +1,27 @@
 package Units;
 
+import java.awt.Graphics;
 
-public abstract class MagicUnit extends Unit
+import Core.GameTile;
+
+
+public class MagicUnit extends Unit
 {
-    private String[] spells = new String[10];
-    
-    public MagicUnit(int x, int y){
-		super(x, y);
+	private String[] spells = new String[10];
+
+	public MagicUnit(GameTile tile,  int playerOwner){
+		super(tile, playerOwner);
+
+	}
+
+	protected String[] getSpells()
+	{
+		return spells;
+	}
+
+	@Override
+	public void draw(Graphics g) {
+		// TODO Auto-generated method stub
 		
 	}
-    
-    protected String[] getSpells()
-    {
-        return spells;
-    }
 }
