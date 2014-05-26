@@ -30,20 +30,29 @@ public class GamePanel extends JPanel{
 
 	private boolean showingGridLines = true;
 
+	private Dialogue dialogue;
+
 	public GamePanel(){
 		grid = new TileGrid(10, 10); //create grid of a certain size
 		setPreferredSize(new Dimension(grid.getGridWidth(), grid.getGridHeight())); //sets this panel's preferred size
+		dialogue = new Dialogue(this, "The dialogue achieved its goal. This is a test. This is a test. Tesing the dialogue box. The"
+				+ " box may handle multiple lines or more. Maybe it won't. Who knows? This is a test. Results have been recieved. "
+				+ " The results have been outputted. Testing dialogue box. THIS IS A TEST. Testing. Wow. This is working so far. Maybe"
+				+ " it will continue? Maybe not... One can not be so sure.", true);
+		dialogue.addOneString("This was a completely new sentence. Just checking to make sure it works with multiple dialogues.", null);
+		dialogue.setDialoguePlacement(Dialogue.PLACEMENT_CENTER_OF_PARENT);
+		dialogue.typeText(true);
 	}
 
 	/**
 	 * All the drawing takes place here
 	 */
 	public void paintComponent(Graphics g){
-		
-		grid.draw(g); //draw the grid and its objects
 
+		grid.draw(g); //draw the grid and its objects
 		if(showingGridLines)
 			drawGridLines(g); //if should show gridlines, draw them
+		dialogue.draw(g);
 
 	}
 
@@ -64,14 +73,14 @@ public class GamePanel extends JPanel{
 		}
 		g.setColor(defaultColor); //set the color back to what it was before drawing the lines
 	}
-	
+
 	/**
 	 * get the dimension size of this panel
 	 */
 	public Dimension getSize(){
 		return new Dimension(grid.getGridWidth(), grid.getGridHeight()); //have the size of the panel be equal to the size of the grid
 	}
-	
+
 	/**
 	 * Sends the MouseEvent to be used by the grid
 	 * @param e The mouse event to use
@@ -79,9 +88,14 @@ public class GamePanel extends JPanel{
 	public void sendMouseEvent(MouseEvent e){
 		grid.takeMouseEvent(e); //send the mouse even to the grid
 	}
-	
+
 	public void update(){
 		grid.update();
+		dialogue.update();
+	}
+
+	public void fixedUpdate(){
+		grid.fixedUpdate();
 	}
 
 }
