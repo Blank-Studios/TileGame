@@ -35,11 +35,10 @@ public class GamePanel extends JPanel{
 	public GamePanel(){
 		grid = new TileGrid(10, 10); //create grid of a certain size
 		setPreferredSize(new Dimension(grid.getGridWidth(), grid.getGridHeight())); //sets this panel's preferred size
-		dialogue = new Dialogue(this, "The dialogue achieved its goal. This is a test. This is a test. Tesing the dialogue box. The"
-				+ " box may handle multiple lines or more. Maybe it won't. Who knows? This is a test. Results have been recieved. "
-				+ " The results have been outputted. Testing dialogue box. THIS IS A TEST. Testing. Wow. This is working so far. Maybe"
-				+ " it will continue? Maybe not... One can not be so sure.", true);
-		dialogue.addOneString("This was a completely new sentence. Just checking to make sure it works with multiple dialogues.", null);
+		dialogue = new Dialogue(this, "Be sure to understand this program. You are helping with this as well. Understanding how to "
+				+ " interact with this code will help you in programming along side of this code, or better yet, determining what is"
+				+ " not good and should be changed. Please take a look at the code, so we can discuss what is the good, the bad, and the ugly."
+				+ " Thank you, for your cooperation and help in making this a better experience. For the BOTH of us.", true);
 		dialogue.setDialoguePlacement(Dialogue.PLACEMENT_CENTER_OF_PARENT);
 		dialogue.typeText(true);
 	}
