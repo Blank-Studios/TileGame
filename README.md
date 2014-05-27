@@ -1,4 +1,4 @@
-Game Overview Ideas
+Game Ideas
 --------------------------------------------------------------------
 Idea to use arrows and enter key as a means of selecting tiles (using ActionListner):
 {
@@ -27,7 +27,7 @@ Updates
 
 Update 1 - Matthew M
 
-Updates were broad in scope and affected every class. FPS was added along with unit movement and updates. Several new constructors were created for the update/render cycle to have affect. An interface was added, along with an option menu to display unit options. Other details included adding new variables, methods, and algorithms
+Updates were broad in scope and affected every class. FPS was added along with unit movement and updates. Several new constructors were created for the update/render cycle to have affect. An interface was added, along with an option menu to display unit options. Other details included adding new variables, methods, and algorithms.
 
 --------------------------------------------------------------------
 
@@ -40,3 +40,4 @@ Updates were broad and affected every class. Added a fixed update, and rearrange
 Update 3 - Matthew M
 
 Update was exclusive to only Dialogue. Images are now able to be used with text and corrected some code issues causing serveral problems. Note: There is still a minor issue that occured when running from my end, though this may only have been a minor issue when testing that was corrected. Future updates that are needed will be committed soon.
+*Note: There are images that are associated with this class now. A default image for the dialogue box and an antention notice for the type of dialogue being displayed. These images should be available to download when looking at the -Issue- that has been made. If the images can not be downloaded, I will send them another way.
